@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/T1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registration"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/T2"
+        android:text="UserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/T1" />
+
+
+    <EditText
+        android:id="@+id/E1"
+        android:layout_below="@+id/T1"
+        android:layout_toRightOf ="@+id/T2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter user name"  />
+
+    <TextView
+        android:id="@+id/T3"
+        android:text="Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/T2" />
+
+    <EditText
+        android:id="@+id/E2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter password"
+        android:layout_toRightOf="@id/T3"
+        android:layout_below="@id/E1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/E2"
+        />
+
+</RelativeLayout>
