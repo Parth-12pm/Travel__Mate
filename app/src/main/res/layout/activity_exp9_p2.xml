@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/arithmetic_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Artihmetic">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Arithmetic Operation"
+        android:textSize="30sp"
+        android:layout_x="50sp"
+        android:layout_y="150sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/T1"
+        android:text="Num 1"
+        android:layout_x="30sp"
+        android:layout_y="220sp"
+        android:textSize="15sp"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter Num 1"
+        android:id="@id/E1"
+        android:layout_x="90sp"
+        android:textSize="15sp"
+        android:layout_y="210sp"  />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/T2"
+        android:text="Num 2"
+        android:layout_x="30sp"
+        android:layout_y="280sp"
+        android:textSize="15sp"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter Num 2"
+        android:id="@id/E2"
+        android:layout_x="90sp"
+        android:textSize="15sp"
+        android:layout_y="270sp"  />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:id="@+id/B1"
+        android:layout_x="25sp"
+        android:layout_y="330sp"
+        />
+
+
+    
+
+</AbsoluteLayout>
