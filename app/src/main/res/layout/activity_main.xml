@@ -22,17 +22,17 @@
 
     <!-- Email -->
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/LinearE1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
+        android:hint="Username"
         android:inputType="textEmailAddress"
         android:padding="12dp"
         android:layout_marginBottom="16dp"/>
 
     <!-- Password -->
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/LinearE2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
@@ -42,7 +42,7 @@
 
     <!-- Login Button -->
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/login1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"

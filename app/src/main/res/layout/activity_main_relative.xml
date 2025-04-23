@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/main"
     >
 
     <TextView
@@ -11,38 +12,48 @@
         android:layout_height="wrap_content"
         android:text="Registration"
         android:textSize="30dp"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        />
+
 
     <TextView
         android:id="@+id/T2"
-        android:text="UserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/T1" />
-
+        android:layout_below="@+id/T1"
+        android:layout_marginTop="11dp"
+        android:text="UserName" />
 
     <EditText
         android:id="@+id/E1"
-        android:layout_below="@+id/T1"
-        android:layout_toRightOf ="@+id/T2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Enter user name"  />
+        android:layout_below="@+id/T1"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="-1dp"
+        android:layout_toRightOf="@+id/T2"
+        android:textSize="30dp"
+        android:hint="Enter user name" />
 
     <TextView
         android:id="@+id/T3"
-        android:text="Password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/T2" />
+        android:layout_below="@+id/T2"
+        android:layout_marginTop="23dp"
+        android:text="Password" />
 
     <EditText
         android:id="@+id/E2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Enter password"
+        android:layout_below="@id/E1"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="-1dp"
         android:layout_toRightOf="@id/T3"
-        android:layout_below="@id/E1" />
+        android:inputType="textPassword"
+        android:textSize="30dp"
+        android:hint="Enter password" />
 
     <Button
         android:layout_width="wrap_content"

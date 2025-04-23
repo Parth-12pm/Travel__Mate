@@ -1,5 +1,10 @@
 package com.example.travel_mate;
 
+import android.annotation.SuppressLint;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -7,6 +12,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -15,38 +21,46 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.travel_mate.databinding.ActivitySensorMsBinding;
 
-public class Sensor_ms extends AppCompatActivity {
+public class Sensor_ms extends AppCompatActivity  implements SensorEventListener   {
 
-    private AppBarConfiguration appBarConfiguration;
-    private ActivitySensorMsBinding binding;
+    SensorManager sm;
+    private Sensor acc;
+    private TextView text;
 
+
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sensor_ms);
 
-        binding = ActivitySensorMsBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        text=findViewById(R.id.text);
+        sm = (SensorManager) this.getSystemService(SENSOR_SERVICE);
+        acc=sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        sm.registerListener((SensorEventListener) this,acc,SensorManager.SENSOR_DELAY_NORMAL);
 
-        setSupportActionBar(binding.toolbar);
+    }
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_sensor_ms);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+    public void onSensorChanged(SensorEvent event) {
+        float[] values = event.values;
+        text.setText("x: "+values[0]+"\ny: "+values[1]+"\nz: "+values[2]);
+    }
 
-        binding.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAnchorView(R.id.fab)
-                        .setAction("Action", null).show();
-            }
-        });
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
     }
 
     @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_sensor_ms);
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
-                || super.onSupportNavigateUp();
+    protected void onResume() {
+        super.onResume();
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+
+
 }

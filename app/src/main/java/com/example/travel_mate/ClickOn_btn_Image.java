@@ -1,6 +1,9 @@
 package com.example.travel_mate;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,15 +13,29 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class ClickOn_btn_Image extends AppCompatActivity {
 
+    ImageView I1;
+    Button B1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_click_on_btn_image);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        I1 = findViewById(R.id.I1);
+        B1 = findViewById(R.id.B1);
+
+        B1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                I1.setImageResource(R.drawable.img1);
+            }
         });
     }
 }

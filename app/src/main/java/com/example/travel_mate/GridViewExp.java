@@ -1,24 +1,37 @@
 package com.example.travel_mate;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 
 public class GridViewExp extends AppCompatActivity {
 
+    GridView gridView;
+    String[] cities = {"New York", "London", "Tokyo", "Mumbai", "Paris", "Sydney", "Berlin", "Dubai", "Toronto", "Singapore"};
+
+
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_grid_view_exp);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        gridView = findViewById(R.id.gridView);
+
+        ArrayAdapter adapter = new ArrayAdapter(this,R.layout.textview,R.id.text1,cities);
+        gridView.setAdapter(adapter);
+
+
+        gridView.setOnItemClickListener((adapterView, view, position, id) -> {
+            String selectedCity = cities[position];
+            Toast.makeText(this, "Selected: " + selectedCity, Toast.LENGTH_SHORT).show();
         });
+
+
     }
 }
